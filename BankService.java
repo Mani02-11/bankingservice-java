@@ -9,6 +9,7 @@ class BankService {
         accounts.add(acc);
         FileHandler.save(accounts);
         System.out.println("Account Created!");
+        System.out.println("Your Account Details :" + "\nID : " + (idCounter-1) + "\nName :" + name +"\nBalance: " + balance);
     }
 
     public void deposit(int id, double amount) {
@@ -17,6 +18,7 @@ class BankService {
                 acc.balance += amount;
                 FileHandler.save(accounts);
                 System.out.println("Deposited!");
+                System.out.println("Your Balance : " + acc.balance);
                 return;
             }
         }
@@ -30,6 +32,7 @@ class BankService {
                     acc.balance -= amount;
                     FileHandler.save(accounts);
                     System.out.println("Withdrawn!");
+                    System.out.println("Your Balance : " + acc.balance);
                 } else {
                     System.out.println("Insufficient balance!");
                 }
